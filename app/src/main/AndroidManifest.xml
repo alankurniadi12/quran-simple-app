@@ -18,12 +18,10 @@
             android:name=".page.PageSurahActivity"
             android:exported="true" />
         <activity
-            android:name=".page.PageActivity"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
