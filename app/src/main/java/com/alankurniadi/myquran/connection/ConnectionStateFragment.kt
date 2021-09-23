@@ -2,12 +2,12 @@ package com.alankurniadi.myquran.connection
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.alankurniadi.myquran.MainActivity
 import com.alankurniadi.myquran.databinding.FragmentConnectionStateBinding
 
@@ -32,11 +32,11 @@ class ConnectionStateFragment : Fragment() {
         val checkNet = CheckInternetAccess(context as AppCompatActivity?)
         binding.progressBarConnection.visibility = View.VISIBLE
         binding.btnCekConnection.setOnClickListener {
-            if(checkNet.checkInternetAccess()){
+            if (checkNet.checkInternetAccess()) {
                 binding.progressBarConnection.visibility = View.GONE
                 startActivity(Intent(activity, MainActivity::class.java))
                 Toast.makeText(context, "Internet Tersedia", Toast.LENGTH_SHORT).show()
-            }else {
+            } else {
                 Toast.makeText(context, "Pastikan Internet Tersedia", Toast.LENGTH_SHORT).show()
             }
         }

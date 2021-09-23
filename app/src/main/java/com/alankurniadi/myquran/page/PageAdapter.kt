@@ -9,11 +9,12 @@ import com.alankurniadi.myquran.R
 import com.alankurniadi.myquran.api.VersesItem
 import com.alankurniadi.myquran.databinding.ItemAyatBinding
 
-class PageAdapter: RecyclerView.Adapter<PageAdapter.PageViewHolder>() {
+class PageAdapter : RecyclerView.Adapter<PageAdapter.PageViewHolder>() {
 
     private val mData = ArrayList<VersesItem>()
+
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(items: ArrayList<VersesItem>){
+    fun setData(items: ArrayList<VersesItem>) {
         mData.clear()
         mData.addAll(items)
         notifyDataSetChanged()
@@ -30,7 +31,7 @@ class PageAdapter: RecyclerView.Adapter<PageAdapter.PageViewHolder>() {
 
     override fun getItemCount(): Int = mData.size
 
-    inner class PageViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class PageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemAyatBinding.bind(itemView)
         fun bind(versesItem: VersesItem) {
             binding.nomorAyat.text = versesItem.number.inSurah.toString()

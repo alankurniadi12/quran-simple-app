@@ -11,20 +11,21 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PageViewModel: ViewModel() {
+class PageViewModel : ViewModel() {
 
     private val _listItemAyat = MutableLiveData<ArrayList<VersesItem>>()
     val listItemAyat: LiveData<ArrayList<VersesItem>> = _listItemAyat
 
     private val _dataSurah = MutableLiveData<QuranSurahModelResponse>()
     val dataSurah: LiveData<QuranSurahModelResponse> = _dataSurah
+
     companion object {
         private const val TAG = "PageViewModel"
     }
 
     fun findListAyat(number: Int) {
         val client = ApiConfig.getApiService().getAyat(number)
-        client.enqueue(object :Callback<QuranSurahModelResponse> {
+        client.enqueue(object : Callback<QuranSurahModelResponse> {
             override fun onResponse(
                 call: Call<QuranSurahModelResponse>,
                 response: Response<QuranSurahModelResponse>
@@ -35,7 +36,7 @@ class PageViewModel: ViewModel() {
                     _listItemAyat.value = response.body()?.data?.verses as ArrayList<VersesItem>
                     _dataSurah.value = response.body()
 
-                }else {
+                } else {
                     Log.d(TAG, "onResponse: ${response.body()?.status}")
                 }
             }

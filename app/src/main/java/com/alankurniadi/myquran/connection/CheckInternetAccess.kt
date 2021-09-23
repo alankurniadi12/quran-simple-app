@@ -10,7 +10,8 @@ class CheckInternetAccess(private val activity: AppCompatActivity?) {
 
     fun checkInternetAccess(): Boolean {
         // register activity with the connectivity manager service
-        val connectivityManager = activity?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager =
+            activity?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         // if the android version is equal to M
         // or greater we need to use the
         // NetworkCapabilities to check what type of
@@ -20,7 +21,8 @@ class CheckInternetAccess(private val activity: AppCompatActivity?) {
             // the currently active default data network.
             val network = connectivityManager.activeNetwork ?: return false
             // Representation of the capabilities of an active network.
-            val activityNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+            val activityNetwork =
+                connectivityManager.getNetworkCapabilities(network) ?: return false
 
             return when {
                 // Indicates this network uses a Wi-Fi transport,
@@ -32,7 +34,7 @@ class CheckInternetAccess(private val activity: AppCompatActivity?) {
                 // else return false
                 else -> false
             }
-        }else {
+        } else {
             val networkInfo = connectivityManager.activeNetworkInfo ?: return false
             return networkInfo.isConnected
         }

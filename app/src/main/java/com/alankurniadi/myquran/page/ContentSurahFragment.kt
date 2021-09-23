@@ -30,7 +30,7 @@ class ContentSurahFragment : Fragment() {
             }
     }
 
-    override fun onCreateView (
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -52,27 +52,24 @@ class ContentSurahFragment : Fragment() {
         if (index != null) {
             pageViewModel.findListAyat(index)
         }
-
-        pageViewModel.listItemAyat.observe(viewLifecycleOwner, {dataItem ->
+        pageViewModel.listItemAyat.observe(viewLifecycleOwner, { dataItem ->
             binding.progressBarPage.visibility = View.GONE
             pageAdapter.setData(dataItem)
         })
-
         pageViewModel.dataSurah.observe(viewLifecycleOwner, {
-            binding.tvJuz.text = "Juz "+it.data.verses[1].meta.juz.toString()
-
+            binding.tvJuz.text = "Juz " + it.data.verses[1].meta.juz.toString()
             if (it.data.preBismillah != null) {
                 binding.tvBissmillah.visibility = View.VISIBLE
                 binding.tvBissmillah.text = it.data.preBismillah.text.arab
             } else {
-                Log.d(TAG, "Bissmillah " +it.data.preBismillah.toString())
+                Log.d(TAG, "Bissmillah " + it.data.preBismillah.toString())
             }
-
-            binding.tvJumlahAyat.text = it.data.numberOfVerses.toString()+ " Ayat"
+            binding.tvJumlahAyat.text = it.data.numberOfVerses.toString() + " Ayat"
             if (it.data.name.transliteration.id.isNotEmpty()) {
                 binding.namaSurahInPage.visibility = View.VISIBLE
                 binding.namaSurahInPage.text = it.data.name.transliteration.id
             }
+
         })
     }
 
@@ -80,5 +77,6 @@ class ContentSurahFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+
 }
 

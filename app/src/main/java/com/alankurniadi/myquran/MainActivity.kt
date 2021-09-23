@@ -1,10 +1,6 @@
 package com.alankurniadi.myquran
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -27,9 +23,6 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-<<<<<<< HEAD
-        mainViewModel.listSurah.observe(this, {dataItem ->
-=======
         //Periksa Koneksi internet
         val checkNet = CheckInternetAccess(this)
         if (checkNet.checkInternetAccess()) {
@@ -41,7 +34,6 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
             })
         }else {
->>>>>>> development
             binding.progressBarList.visibility = View.GONE
             val mFragmentManager = supportFragmentManager
             val mConnectionStateFragment = ConnectionStateFragment()
@@ -53,10 +45,8 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                     .commit()
             }
         }
-
         binding.searchBar.setOnQueryTextListener(this)
     }
-
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         return false

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import com.alankurniadi.myquran.api.Data
 import com.alankurniadi.myquran.api.DataItem
 import com.alankurniadi.myquran.databinding.ItemSuratBinding
 import com.alankurniadi.myquran.page.PageSurahActivity
@@ -18,9 +17,10 @@ import kotlin.collections.ArrayList
 class MainAdapter(
     private val activity: MainActivity,
     private var dataItem: ArrayList<DataItem>
-    ): RecyclerView.Adapter<MainAdapter.MainViewHolder>(), Filterable {
+) : RecyclerView.Adapter<MainAdapter.MainViewHolder>(), Filterable {
 
     private var mData = ArrayList<DataItem>()
+
     init {
         mData = dataItem
     }
@@ -36,7 +36,7 @@ class MainAdapter(
 
     override fun getItemCount(): Int = mData.size
 
-    inner class MainViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemSuratBinding.bind(itemView)
         fun bind(dataItem: DataItem) {
             binding.nomorSurah.text = dataItem.number.toString()
@@ -62,7 +62,9 @@ class MainAdapter(
                 } else {
                     val resultList = ArrayList<DataItem>()
                     for (row in dataItem) {
-                        if (row.name.transliteration.id.lowercase(Locale.ROOT).contains(charSearch.lowercase(Locale.ROOT))) {
+                        if (row.name.transliteration.id.lowercase(Locale.ROOT)
+                                .contains(charSearch.lowercase(Locale.ROOT))
+                        ) {
                             resultList.add(row)
                         }
                     }
