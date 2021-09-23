@@ -7,17 +7,17 @@ import androidx.lifecycle.ViewModel
 import com.alankurniadi.myquran.api.ApiConfig
 import com.alankurniadi.myquran.api.DataItem
 import com.alankurniadi.myquran.api.QuranModelResponse
-import com.alankurniadi.myquran.api.QuranResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel: ViewModel() {
+class MainViewModel : ViewModel() {
 
     private val _listSurah = MutableLiveData<ArrayList<DataItem>>()
     val listSurah: LiveData<ArrayList<DataItem>> = _listSurah
     private val _namaSurah = MutableLiveData<QuranModelResponse>()
     val namaSurah: LiveData<QuranModelResponse> = _namaSurah
+
     companion object {
         private const val TAG = "MainViewModel"
     }
@@ -28,16 +28,16 @@ class MainViewModel: ViewModel() {
 
     fun findListSurah() {
         val client = ApiConfig.getApiService().getListSuratQuran()
-        client.enqueue(object :Callback<QuranModelResponse> {
+        client.enqueue(object : Callback<QuranModelResponse> {
             override fun onResponse(
                 call: Call<QuranModelResponse>,
                 response: Response<QuranModelResponse>
             ) {
-                if (response.isSuccessful){
+                if (response.isSuccessful) {
                     _listSurah.value = response.body()?.data as ArrayList<DataItem>?
                     _namaSurah.value = response.body()
                     Log.d(TAG, "onResponse: ${response.body()?.message}")
-                }else {
+                } else {
                     Log.d(TAG, "onResponse: ${response.message()}")
                 }
             }

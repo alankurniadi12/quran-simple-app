@@ -74,4 +74,9 @@
                 tools:listitem="@layout/item_surat" />
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/frame_connection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

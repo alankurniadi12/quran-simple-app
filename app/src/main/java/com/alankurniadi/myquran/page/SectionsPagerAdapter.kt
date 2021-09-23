@@ -6,9 +6,10 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.alankurniadi.myquran.api.DataItem
 
-class SectionsPagerAdapter(activity: AppCompatActivity): FragmentStateAdapter(activity){
+class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 
     private val mData = ArrayList<DataItem>()
+
     @SuppressLint("NotifyDataSetChanged")
     fun setData(items: ArrayList<DataItem>) {
         mData.clear()
@@ -19,7 +20,7 @@ class SectionsPagerAdapter(activity: AppCompatActivity): FragmentStateAdapter(ac
     override fun getItemCount(): Int = mData.size
 
     override fun createFragment(position: Int): Fragment {
-       return ContentSurahFragment.newInstance(mData[position].number)
+        return ContentSurahFragment.newInstance(mData[position].number)
     }
 
 }

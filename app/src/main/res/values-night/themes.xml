@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MyQuran" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MyQuran" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +12,54 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="NomorAyat">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/firasans_regular</item>
+        <item name="android:textColor">@color/main_red</item>
+    </style>
+
+    <style name="TextTitleAyat">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/firasans_regular</item>
+        <item name="android:textColor">@color/text_title_color</item>
+    </style>
+
+    <style name="TextLafaztAyat">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/ayat_color</item>
+        <item name="android:fontFamily">@font/_pdms_saleem_quranfont</item>
+    </style>
+
+    <style name="TextSubTitleAyat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/firasans_regular</item>
+        <item name="android:textColor">@color/red_soft</item>
+    </style>
+
+    <style name="TextContentAyat">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/ayat_color</item>
+        <item name="android:fontFamily">@font/_pdms_saleem_quranfont</item>
+    </style>
+
+    <style name="TextContentBismillah">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/ayat_color</item>
+        <item name="android:fontFamily">@font/_pdms_saleem_quranfont</item>
+    </style>
+
+    <style name="TextContentEjaan">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/firasans_italic</item>
+        <item name="android:textColor">@color/red_soft</item>
+    </style>
+
+    <style name="TextContentTerjemahan">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/firasans_regular</item>
     </style>
 </resources>

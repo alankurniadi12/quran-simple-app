@@ -60,12 +60,14 @@
             tools:text="100" />
     </LinearLayout>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> development
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_item_ayat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/linear"
         tools:listitem="@layout/item_ayat" />
-
 </RelativeLayout>
