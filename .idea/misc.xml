@@ -10,11 +10,12 @@
         <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/activity_page.xml" value="0.264" />
         <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/activity_page_surah.xml" value="0.2" />
+        <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/fragment_connection_state.xml" value="0.16493055555555555" />
         <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/fragment_content_surah.xml" value="0.24739583333333334" />
         <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/fragment_content_surah2.xml" value="0.24739583333333334" />
         <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/fragment_page1.xml" value="0.1" />
-        <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/item_ayat.xml" value="0.264" />
-        <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/item_surat.xml" value="0.264" />
+        <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/item_ayat.xml" value="0.2" />
+        <entry key="..\:/Project/Android/MyQuran/app/src/main/res/layout/item_surat.xml" value="0.2" />
         <entry key="..\:/Project/Android/MyQuran/app/src/main/res/menu/option_menu.xml" value="0.24739583333333334" />
       </map>
     </option>
