@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         mainViewModel.listSurah.observe(this, {dataItem ->
             binding.progressBarList.visibility = View.GONE
             mainAdapter = MainAdapter(this, dataItem)
