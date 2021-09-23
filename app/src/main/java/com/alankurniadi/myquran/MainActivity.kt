@@ -68,4 +68,10 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     private fun searchSurahName(query: String) {
         mainAdapter.filter.filter(query)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        isDestroyed
+    }
 }
