@@ -9,9 +9,9 @@
         android:id="@+id/progress_bar_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:layout_centerInParent="true"
         android:indeterminateTint="@color/main_red"
-        android:layout_centerInParent="true"/>
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/tv_bissmillah"
@@ -27,17 +27,17 @@
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_below="@id/tv_bissmillah"
+        android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tv_juz"
             style="@style/TextTitleAyat"
-            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Juz 1"/>
+            android:textSize="16sp"
+            tools:text="Juz 1" />
 
 
         <TextView
@@ -53,14 +53,12 @@
         <TextView
             android:id="@+id/tv_jumlah_ayat"
             style="@style/TextTitleAyat"
-            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:textSize="16sp"
             tools:text="100" />
     </LinearLayout>
-
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_item_ayat"
@@ -68,5 +66,4 @@
         android:layout_height="match_parent"
         android:layout_below="@id/linear"
         tools:listitem="@layout/item_ayat" />
-
 </RelativeLayout>
